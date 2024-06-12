@@ -87,6 +87,18 @@ make destroy
 
 to stop and delete the Linode instance.
 
+## Customizing the Linode instance
+
+If you would like to customize any aspects of the Linode instance that gets run,
+these can be tweaked in the
+[Makefile](https://github.com/nesv/flatcar-demo/blob/main/Makefile):
+
+| Makefile macro | Default Value | Description |
+| -------------- | ------------- | ----------- |
+| `REGION` | us-ord | The Linode region to launch the instance in. |
+| `INSTANCE_TYPE` | g6-nanode-1 | The instance type (size) to launch. |
+| `INSTANCE_LABEL` | flatcar-demo | The name of the instance (the "label"). |
+
 [1]: https://github.com/flatcar/Flatcar/discussions/1443
 [linode-cli]: https://www.linode.com/docs/products/tools/cli/guides/install/
 [gnu-make]: https://www.gnu.org/software/make/
