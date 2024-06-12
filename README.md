@@ -2,6 +2,9 @@
 
 Prepared demo for the [Flatcar Office Hours on Wednesday, June 12 2024][1].
 
+The recording for the demo can be found here: [2024-06-12 Flatcar Office
+Hours](https://www.youtube.com/watch?v=i04yEYnDujg).
+
 ## Setup
 
 Install [devbox][devbox] &mdash; this will provide all of the tooling required
