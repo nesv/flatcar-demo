@@ -77,6 +77,13 @@ new `flatcar-demo` instance.
 If you go to that IP address into your web browser, you will be greeted with a
 very basic web page displaying the name ("label") of your Linode instance.
 
+If you would like to log into your fancy new Flatcar Linode instance and poke
+around a little bit, run:
+
+```sh
+ssh -i id_ed25519 core@<IP_ADDRESS>
+````
+
 ## Cleaning up
 
 When you are done with this Linode instance, run
