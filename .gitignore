@@ -1,0 +1,4 @@
+ignition.json
+*.img.gz
+id_*
+id_*.pub

@@ -1,0 +1,32 @@
+variant: flatcar
+version: 1.0.0
+passwd:
+  users:
+    - name: core
+      ssh_authorized_keys:
+        - "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINKJmooTMJP6Ucxt2Mw9LDsaK7LNn9xwm2SpBOrKx/e1 nsaika@yow-lp5yp6cy"
+
+storage:
+  directories:
+    - path: /var/www
+
+systemd:
+  units:
+    - name: nginx.service
+      enabled: true
+      contents: |
+        [Unit]
+        Description=enjinnecks
+        After=docker.service coreos-metadata.service
+        Requires=docker.service coreos-metadata.service
+        [Service]
+        EnvironmentFile=/run/metadata/flatcar
+        TimeoutStartSec=0
+        ExecStartPre=-/usr/bin/docker rm --force nginx1
+        ExecStartPre=-/usr/bin/bash -c "echo '<h2>${COREOS_AKAMAI_INSTANCE_LABEL}</h2>' > /var/www/index.html"
+        ExecStart=/usr/bin/docker run --name nginx1 --volume "/var/www:/usr/share/nginx/html:ro" --pull=always --log-driver=journald --net=host docker.io/nginx:1
+        ExecStop=/usr/bin/docker stop nginx1
+        Restart=always
+        RestartSec=5s
+        [Install]
+        WantedBy=multi-user.target
