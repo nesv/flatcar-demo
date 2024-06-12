@@ -4,7 +4,7 @@ passwd:
   users:
     - name: core
       ssh_authorized_keys:
-        - "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINKJmooTMJP6Ucxt2Mw9LDsaK7LNn9xwm2SpBOrKx/e1 nsaika@yow-lp5yp6cy"
+        - "your public ssh key here"
 
 storage:
   directories:
